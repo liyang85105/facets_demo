@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="nojs html css_verticalspacer" lang="en-US">
+ <head>
+
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" sizes="16x16 32x32 64x64" href="favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="196x196" href="favicon/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="160x160" href="favicon/favicon-160.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon/favicon-64.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16.png">
+  <link rel="apple-touch-icon" href="favicon/favicon-57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicon/favicon-114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicon/favicon-72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicon/favicon-144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicon/favicon-60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicon/favicon-120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicon/favicon-76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicon/favicon-152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/favicon-180.png">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-TileImage" content="favicon/favicon-144.png">
+  <meta name="msapplication-config" content="favicon/browserconfig.xml">
+
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+  
+  
+  <title>Facets - Visualizations for ML datasets</title>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="{{ static_url('css/site_global.css') }}"/>
+  <link rel="stylesheet" type="text/css" href="{{ static_url('css/index.css') }}" id="pagesheet"/>
+
+  <!--Fonts-->
+  <link href="{{ static_url('fonts/Work+Sans.font') }}" rel="stylesheet">
+  <link href="{{ static_url('fonts/Roboto.font') }}" rel="stylesheet">
+
+  <!-- JS includes -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.24/webcomponents-lite.js"></script>
+  <link rel="import" href="{{ static_url('html/facets-jupyter.html') }}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ </head>
+
+
+ <body>
+  <!-- Top Anchor   -->
+  <a class="anchor_item colelem" id="top"></a> 
+
+  <div class="clearfix" id="page"><!-- column -->
+   <div class="position_content" id="page_position_content">
+
+
+<!-- header -->
+    <div class="clearfix colelem" id="pu130"><!-- group -->
+<!-- Header Bar -->
+     <div class="browser_width header-bar ">
+<!-- Navigation Menu -->
+          <div class="nav-menu">
+<!-- Facets Name -->
+          <div class="facets"><a href="index.html#top"><h3>Facets</h3></a></div>
+<!-- In=page Anchor Links -->
+          <div class= "nav-links">
+            <div class="nav-link"><a href="index.html#top">About</a></div>
+            <div class="nav-link"><a href="index.html#facets-overview">Facets Overview</a></div>
+            <div class="nav-link"><a href="index.html#facets-dive">Facets Dive</a></div>
+            <div class="nav-link"><a href="index.html#references">References</a></div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+    <div class="title facets-ov">
+        <h1>Facets Overview</h1>
+    </div>
+
+    <div class="subhead facets-ov">
+      <h2><span class='focus-word'>Overview</span> takes input feature data from any number of datasets, analyzes them feature by feature and visualizes the analysis.</h2>
+    </div>
+
+    <div class="desc-copy facets-ov">
+      <p>Overview gives users a quick understanding of the distribution of values across the features of their dataset(s). Uncover several uncommon and common issues such as unexpected feature values, missing feature values for a large number of observation, training/serving skew and train/test/validation set skew.</p>
+    </div>
+
+    <div class="facets-ov-demo">
+    </div>
+
+    <br/>
+
+    <div class="demo-desc-box facets-ov">
+      <div class="facets-ov demo-title-bar">
+        <h5 class="demo-head">Try it out</h5>
+        <div class="demo-line facets-ov" ><!-- simple frame --></div>
+      </div>
+      <div class='demo-desc facets-ov'>
+        <div class="facets-ov demo-copy col1"><!-- content -->
+          <h6 class='summary'>Facets Overview summarizes statistics for each feature and compares the training and test datasets. It becomes easy to learn the distribution of values across the 6 numeric and 9 categorical features for both datasets.</h6>
+        </div>
+        <div class="demo-copy col2"><!-- content -->
+          <h6>Use the “Sort by” dropdown to sort features by “Distribution distance”. This sort order brings to the top of the tables, the features that are the most different between the two datasets. “Target” becomes the first feature in the table of categorical features. The chart for this feature shows that the training and test datasets actually use slightly different labels (“&gt;50K” for the training data and “&gt;50K.” for test data - notice the trailing period). This helps us uncover an unexpected difference between the training data and the test data.</h6>
+        </div>
+      </div>
+      <div class='facets-ov upload-data'>
+        <div class="facets-ov upload-data-button" id="uploadbutton1"><h4>load your own data</h4></div>
+        <div class='facets-ov upload-data-desc'><h6 class='upload'>Load one or more csv files with your first row being the header.</h6></div>
+      </div>
+    </div>
+
+ <div class="separator" id="facets-dive"><!-- separating line --></div>
+
+   <div class="title facets-dive">
+      <h1>Facets Dive</h1>
+    </div>
+
+    <div class="subhead facets-dive">
+      <h2><span class='focus-word'>Dive</span> is a tool for interactively exploring large numbers of data points at once.</h2>
+    </div>
+
+    <div class="desc-copy facets-dive">
+      <p>Dive provides an interactive interface for exploring the relationship between data points across all of the different features of a dataset. Each individual item in the visualization represents a data point. Position items by &quot;faceting&quot; or bucketing them in multiple dimensions by their feature values. Success stories of Dive include the detection of classifier failure, identification of systematic errors, evaluating ground truth and potential new signals for ranking.</p>
+    </div>
+
+    <div class="facets-dive-demo">
+    </div>
+
+    <br/>
+     <div class="demo-desc-box facets-dive">
+      <div class="facets-dive demo-title-bar">
+        <h5 class="demo-head">Try it out</h5>
+        <div class="demo-line facets-dive" ><!-- simple frame --></div>
+      </div>
+      <div class='demo-desc facets-dive'>
+        <div class="facets-dive demo-copy col1"><!-- content -->
+          <h6 class="summary">The Dive visualization shows each individual item in the training dataset. Clicking on an individual item reveals key/value pairs that represent the features of that record; values may be strings or numbers. </h6>
+        </div>
+        <div class="demo-copy col2"><!-- content -->
+          <h6>Using the menus on the left, you can change how the data is organized in order to gain insight into the dataset. Use the “Faceting” menu to do Row-based faceting” by “Education-num”. Use the “Color” menu to color by “Target”. This will show how higher levels of education are related to whether or not an individual earns more than $50K/yr.</h6>
+        </div>
+      </div>
+      <div class='facets-dive upload-data'>
+        <div class="facets-dive upload-data-button" id="uploadbutton2"><h4>load your own data</h4></div>
+        <div class='facets-dive upload-data-desc'><h6 class='upload'>Load one or more csv files with your first row being the header. </h6></div>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
+
+<input type="file" id="fileupload" style="visibility:hidden" multiple/>
+  <script>
+  function setupVis() {
+    var fileupload = $("#fileupload")[0];
+    $("#uploadbutton1")[0].onclick = function() {
+        fileupload.click();
+    };
+    $("#uploadbutton2")[0].onclick = function() {
+        fileupload.click();
+    };
+    var whendone = function(datasetsList) {
+        var overview = $("#foelem")[0];
+        var dive = $("#fdelem")[0];
+        var proto = overview.getStatsProto(datasetsList);
+        overview.protoInput = proto;
+        if (datasetsList.length < 2) {
+          dive.data = datasetsList[0].data;
+        } else {
+          var newFeatureForDive = 'csv-source';
+          var columns = datasetsList.length > 0 ? datasetsList[0].data.columns : [];
+          while (columns.indexOf(newFeatureForDive) > -1) {
+            newFeatureForDive = newFeatureForDive + newFeatureForDive;
+          }
+          datasetsList.forEach(function(dataset) {
+            dataset.data.forEach(function(datapoint) {
+              datapoint[newFeatureForDive] = dataset.name;
+            });
+          });
+          var alldata = datasetsList.reduce(function(a, b){
+            return a.concat(b.data);
+          }, []);
+          dive.data = alldata;
+          dive.colorBy = newFeatureForDive;
+        }
+      }
+      var fileworker = new Worker("{{ static_url('js/worker.js') }}");
+    fileworker.onmessage = function(e) {
+        var datasetsList=e.data;
+        whendone(datasetsList);
+    };
+    fileworker.onerror = function(e) {
+      console.error('ERROR: Line ', e.lineno, ' in ', e.filename, ': ', e.message);
+    };
+    var readFileAsync = function() {
+      fileworker.postMessage(fileupload.files);
+    }
+    fileupload.addEventListener('change', readFileAsync);
+    $.when(trainAjax(), testAjax()).done(function(trainAjax, testAjax) {
+      var overview = $("#foelem")[0];
+      var proto = overview.getStatsProto([
+        {data: trainAjax[0], name: "train"},
+        {data: testAjax[0], name: "test"}]);
+      overview.protoInput = proto;
+      $("#fdelem")[0].data = testAjax[0];
+    });
+    function trainAjax() {
+        return $.getJSON({url: "{{ static_url('dat/train.json') }}"});
+    }
+    function testAjax() {
+        return $.getJSON({url: "{{ static_url('dat/test.json') }}"});
+    }
+  }
+  $(document).on('click', 'a[href*=\\#]', function(event){
+    event.preventDefault();
+    $('html, body').animate({
+        scrollTop: $(this.hash).offset().top
+    }, 500);
+  });
+  </script>
+  <script>
+  window.addEventListener('WebComponentsReady', function() {
+    var link = document.createElement("link");
+    link.rel = "import";
+      link.href = "{{ static_url('html/facets-jupyter.html') }}";
+    link.onload= function() {
+      var dive = document.createElement("facets-dive");
+      dive.id = "fdelem";
+      $(".facets-dive-demo")[0].appendChild(dive);
+      var overview = document.createElement("facets-overview");
+      overview.id = "foelem";
+      $(".facets-ov-demo")[0].appendChild(overview);
+      setupVis();
+    };
+    document.head.appendChild(link);
+  });
+</script>
+</html>

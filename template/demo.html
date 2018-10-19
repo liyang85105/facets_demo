@@ -1,0 +1,80 @@
+<!--
+@license
+Copyright 2017 Google Inc.
+-->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script>
+  window.addEventListener('WebComponentsReady', function() {
+    var link = document.createElement('link');
+    link.rel = "import";
+    link.href = "facets.html";
+    link.onload= function() {
+      var dive = document.createElement('facets-dive');
+      dive.crossOrigin = "anonymous";
+      dive.spriteImageWidth = "40";
+      dive.spriteImageHeight = "40";
+      document.body.appendChild(dive);
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'demo.js';
+      document.head.appendChild(script);
+    }
+    document.head.appendChild(link);
+  });
+  </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.24/webcomponents-lite.js"></script>
+
+  <style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  .header {
+    align-items: center;
+    background-color: #ffd139;  /* Quick Draw yellow. */
+    display: flex;
+    height: 35px;
+    justify-content: center;
+    width: 100%;
+  }
+  .header label {
+    font-family: "Comic Sans MS";
+    margin: 0 10px;
+  }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <label>
+      <span><a href="https://quickdraw.withgoogle.com/data">Quick, Draw!</a> Dataset:</span>
+      <select class="datasets">
+        <option value="https://storage.googleapis.com/quickdraw-data/upload/random-faces">
+          Random Faces
+        </option>
+        <option value="https://storage.googleapis.com/quickdraw-data/upload/complex-faces">
+          Complex Faces
+        </option>
+        <option value="https://storage.googleapis.com/quickdraw-data/upload/random-faces-nonus">
+          Random Faces (non-US)
+        </option>
+        <option value="https://storage.googleapis.com/quickdraw-data/upload/random-chairs">
+          Random Chairs
+        </option>
+      </select>
+    </label>
+    <label>
+      <span>Preset View:</span>
+      <select class="presets"></select>
+    </label>
+  </div>
+</body>
+</html>
